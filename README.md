@@ -19,7 +19,7 @@
 ## Run
 
 ```bash
-TBD
+python3 cpplint.py checks/loopcheck.cpp
 ```
 
 
@@ -27,7 +27,18 @@ TBD
 ## Usage
 
 ```
-TBD
+Syntax: cpplint.py [--verbose=#] [--output=emacs|eclipse|vs7|junit|sed|gsed]
+                   [--filter=-x,+y,...]
+                   [--counting=total|toplevel|detailed] [--root=subdir]
+                   [--repository=path]
+                   [--linelength=digits] [--headers=x,y,...]
+                   [--recursive]
+                   [--exclude=path]
+                   [--extensions=hpp,cpp,...]
+                   [--includeorder=default|standardcfirst]
+                   [--quiet]
+                   [--version]
+        <file> [file] ...
 ```
 
 

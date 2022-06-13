@@ -61,10 +61,12 @@ import sysconfig
 import unicodedata
 import xml.etree.ElementTree
 
+from checks import loopcheck
+
 # if empty, use defaults
 _valid_extensions = set([])
 
-__VERSION__ = '1.6.0'
+__VERSION__ = '1.7.0'
 
 try:
   xrange          # Python 2
@@ -846,6 +848,10 @@ _SED_FIXUPS = {
   'You don\'t need a ; after a }': r's/};/}/',
   'Missing space after ,': r's/,\([^ ]\)/, \1/g',
 }
+
+_EXTRA_CHECK_FUNCTIONS = [
+    loopcheck.CheckLoopCondition
+]
 
 _regexp_compile_cache = {}
 
@@ -6706,7 +6712,7 @@ def PrintUsage(message):
     sys.exit(0)
 
 def PrintVersion():
-  sys.stdout.write('Cpplint fork (https://github.com/cpplint/cpplint)\n')
+  sys.stdout.write('Cpplint fork (https://github.com/devops-lintflow/cpplint)\n')
   sys.stdout.write('cpplint ' + __VERSION__ + '\n')
   sys.stdout.write('Python ' + sys.version + '\n')
   sys.exit(0)
@@ -6891,7 +6897,7 @@ def main():
 
     _cpplint_state.ResetErrorCounts()
     for filename in filenames:
-      ProcessFile(filename, _cpplint_state.verbose_level)
+      ProcessFile(filename, _cpplint_state.verbose_level, extra_check_functions=_EXTRA_CHECK_FUNCTIONS)
     # If --quiet is passed, suppress printing error count unless there are errors.
     if not _cpplint_state.quiet or _cpplint_state.error_count > 0:
       _cpplint_state.PrintErrorCounts()
