@@ -10,6 +10,12 @@
 
 
 
+## Features
+
+![feature](feature.png)
+
+
+
 ## Prerequisites
 
 - Python >= 3.7.0
@@ -19,7 +25,7 @@
 ## Run
 
 ```bash
-python3 cpplint.py checks/loopcheck.cpp
+python3 cpplint.py sample/loop.cpp
 ```
 
 

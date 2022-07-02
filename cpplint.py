@@ -66,7 +66,7 @@ from checks import loopcheck
 # if empty, use defaults
 _valid_extensions = set([])
 
-__VERSION__ = '1.7.0'
+__VERSION__ = '1.0.0'
 
 try:
   xrange          # Python 2
