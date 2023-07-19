@@ -22,6 +22,15 @@
 
 
 
+## Build
+
+```bash
+pip3 install -Ur dist-requirements
+python3 setup.py sdist bdist_wheel
+```
+
+
+
 ## Run
 
 ```bash

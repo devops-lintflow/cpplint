@@ -70,7 +70,7 @@ setup(name='cpplint',
                    'Topic :: Software Development :: Quality Assurance',
                    'License :: Freely Distributable'],
       description='Automated checker to ensure C++ files follow Google\'s style guide',
-      long_description=open('README.rst').read(),
+      long_description=open('README.md').read(),
       license='BSD-3-Clause',
       setup_requires=[
           "pytest-runner==5.2"
